@@ -119,7 +119,7 @@ public class WindmillBlock extends Block implements ITileEntityProvider {
         if(!pWorld.isRemote) {
             if(pPlayer.isSneaking()) {
                 // Dismantle block if player has a wrench
-                if(Util.hasWrench(pPlayer, pX, pY, pZ)) {
+                if (pPlayer.getHeldItem().getUnlocalizedName().contains("wrench")) {
                     dismantle(pWorld, pX, pY, pZ);
                     return true;
                 }
